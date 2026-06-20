@@ -1,0 +1,211 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Contact</title>
+  <style>
+    :root {
+      --ink: #111827;
+      --muted: #5b6475;
+      --paper: #fffaf0;
+      --coral: #ff6b6b;
+      --gold: #ffd166;
+      --teal: #2ec4b6;
+      --blue: #3a86ff;
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      margin: 0;
+      min-height: 100vh;
+      display: grid;
+      place-items: center;
+      overflow-x: hidden;
+      color: var(--ink);
+      font-family: Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      background:
+        linear-gradient(115deg, rgba(255, 209, 102, 0.45), transparent 34%),
+        linear-gradient(245deg, rgba(46, 196, 182, 0.32), transparent 40%),
+        radial-gradient(circle at 80% 12%, rgba(58, 134, 255, 0.28), transparent 28%),
+        var(--paper);
+    }
+
+    nav {
+      position: fixed;
+      top: 24px;
+      left: 50%;
+      z-index: 5;
+      display: flex;
+      gap: 8px;
+      padding: 8px;
+      border: 1px solid rgba(17, 24, 39, 0.12);
+      border-radius: 999px;
+      background: rgba(255, 255, 255, 0.68);
+      box-shadow: 0 16px 48px rgba(17, 24, 39, 0.12);
+      backdrop-filter: blur(18px);
+      transform: translateX(-50%);
+    }
+
+    nav a {
+      padding: 10px 16px;
+      border-radius: 999px;
+      color: var(--ink);
+      font-size: 14px;
+      font-weight: 800;
+      text-decoration: none;
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      transition: background 180ms ease, color 180ms ease, transform 180ms ease;
+    }
+
+    nav a:hover,
+    nav a[aria-current="page"] {
+      background: var(--ink);
+      color: white;
+      transform: translateY(-1px);
+    }
+
+    main {
+      width: min(92vw, 820px);
+      padding: clamp(32px, 8vw, 82px);
+      position: relative;
+      text-align: left;
+      isolation: isolate;
+    }
+
+    main::before {
+      content: "";
+      position: absolute;
+      inset: 0;
+      z-index: -1;
+      border: 1px solid rgba(17, 24, 39, 0.12);
+      border-radius: 8px;
+      background: rgba(255, 255, 255, 0.58);
+      box-shadow: 0 28px 80px rgba(17, 24, 39, 0.14);
+      backdrop-filter: blur(18px);
+    }
+
+    .sparkline {
+      width: 180px;
+      height: 6px;
+      margin-bottom: 30px;
+      border-radius: 999px;
+      background: linear-gradient(90deg, var(--coral), var(--gold), var(--teal), var(--blue));
+      box-shadow: 0 10px 34px rgba(58, 134, 255, 0.28);
+    }
+
+    h1 {
+      margin: 0;
+      font-size: clamp(48px, 9vw, 104px);
+      line-height: 0.92;
+      letter-spacing: 0;
+      text-wrap: balance;
+    }
+
+    h1 span {
+      display: block;
+      background: linear-gradient(90deg, #111827 4%, #ff6b6b 36%, #2ec4b6 70%, #3a86ff 96%);
+      background-clip: text;
+      -webkit-background-clip: text;
+      color: transparent;
+    }
+
+    p {
+      max-width: 620px;
+      margin: 26px 0 0;
+      color: var(--muted);
+      font-size: clamp(17px, 2vw, 21px);
+      line-height: 1.65;
+    }
+
+    .contact-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 14px;
+      margin-top: 34px;
+    }
+
+    .contact-card {
+      min-height: 120px;
+      padding: 20px;
+      border: 1px solid rgba(17, 24, 39, 0.12);
+      border-radius: 8px;
+      background: rgba(255, 255, 255, 0.62);
+      color: var(--ink);
+      text-decoration: none;
+      transition: transform 180ms ease, box-shadow 180ms ease;
+    }
+
+    .contact-card:hover {
+      transform: translateY(-3px);
+      box-shadow: 0 18px 42px rgba(17, 24, 39, 0.12);
+    }
+
+    .contact-card strong {
+      display: block;
+      margin-bottom: 10px;
+      font-size: 14px;
+      text-transform: uppercase;
+      letter-spacing: 0.1em;
+    }
+
+    .contact-card span {
+      color: var(--muted);
+      line-height: 1.5;
+    }
+
+    @media (max-width: 680px) {
+      main {
+        margin-top: 72px;
+      }
+
+      .contact-grid {
+        grid-template-columns: 1fr;
+      }
+    }
+
+    @media (max-width: 560px) {
+      nav {
+        top: 14px;
+        width: calc(100% - 28px);
+        justify-content: center;
+      }
+
+      nav a {
+        padding: 9px 10px;
+        font-size: 12px;
+      }
+
+      main {
+        padding: 34px 22px;
+      }
+    }
+  </style>
+</head>
+<body>
+  <nav aria-label="Primary navigation">
+    <a href="index.html">Home</a>
+    <a href="about.html">About</a>
+    <a href="contact.html" aria-current="page">Contact</a>
+  </nav>
+  <main>
+    <div class="sparkline" aria-hidden="true"></div>
+    <h1>Contact <span>Us</span></h1>
+    <p>Drop a note, start a conversation, or just say hello. This page is ready for real contact details whenever you want to add them.</p>
+    <section class="contact-grid" aria-label="Contact options">
+      <a class="contact-card" href="mailto:hello@example.com">
+        <strong>Email</strong>
+        <span>hello@example.com</span>
+      </a>
+      <a class="contact-card" href="tel:+10000000000">
+        <strong>Phone</strong>
+        <span>+1 000 000 0000</span>
+      </a>
+    </section>
+  </main>
+</body>
+</html>
